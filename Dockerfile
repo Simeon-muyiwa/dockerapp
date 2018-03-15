@@ -1,6 +1,5 @@
-FROM ubuntu:utopic
-MAINTAINER Jose Mota <jose@josemota.net>
-
+FROM ubuntu:latest
+MAINTAINER Simeon Muyiwa
 # Just use bash.
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
@@ -24,6 +23,7 @@ RUN apt-get install -y libssl-dev libreadline6 libreadline6-dev zlib1g zlib1g-de
 RUN apt-get clean
 
 # Force sudoers to not being asked the password
+ RUN apt-get install sudo
 RUN echo %sudo        ALL=NOPASSWD: ALL >> /etc/sudoers
 
 # Ruby-install
