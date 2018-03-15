@@ -7,7 +7,8 @@ db() {
 app() {
   docker stop app
   docker rm app
-  docker run -p 80:80 --link app_db:postgres --name app }
+  docker run -p 80:80 --link app_db:postgres --name app muyiwasimeon/app
+}
 
 action=$1
 
